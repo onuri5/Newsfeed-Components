@@ -36,18 +36,18 @@ let menuItems = [
 
 function menuMaker(arr) {
   const menuButton = document.querySelector('.menu-button');
+  const header = document.querySelector('.header');
   const menu = document.createElement('div');
   const list = document.createElement('ul');
 
-  document.body.appendChild(menu)
+  header.appendChild(menu)
   menu.appendChild(list);
+
   menu.className = 'menu';
 
   menuButton.addEventListener('click', () => {
     menu.classList.toggle('menu--open');
   });
-
-
 
   arr.forEach(arrItem => {
     const listItem = document.createElement('li');
@@ -55,13 +55,7 @@ function menuMaker(arr) {
     list.appendChild(listItem);
   });
 
-  return document.body.appendChild(menu);
-
+  return menu;
 }
 
 menuMaker(menuItems);
-
-// header.appendChild(menuMaker(menuItems))
-
-
- 

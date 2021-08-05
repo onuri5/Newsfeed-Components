@@ -162,20 +162,19 @@ function articleMaker(obj) {
   thirdParagraph.textContent = obj.thirdParagraph;
   expander.textContent = '+';
 
-  expander.addEventListener('click', () => {
+  article.addEventListener('click', () => {
     article.classList.toggle('article-open');
   });
 
   return article;
 }
 
-const temp = data.map(item => {
-  return articleMaker(item);
-});
+// const temp = data.map(item => {
+//   return articleMaker(item);
+// });
 
-temp.forEach(item => {
-  articles.append(item);
-});
+// temp.forEach(item => {
+//   articles.append(item);
+// });
 
-
-console.log(articles)
+data.forEach(article => articles.appendChild(articleMaker(article)));
